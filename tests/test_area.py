@@ -3,7 +3,11 @@ from src.area import calculate_area_square
   
 def test_calculate_area_square_negative():  
     with pytest.raises(TypeError):  
-        calculate_area_square(-2)  
+        calculate_area_square(-2)
+
+def studentnumber():
+    assert "0"+"caluclate_area_square(2)" == "04"
+
   
 def test_calculate_area_square_string():  
     with pytest.raises(TypeError):  
