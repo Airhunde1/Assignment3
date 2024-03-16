@@ -5,7 +5,7 @@ def test_calculate_area_square_negative():
     with pytest.raises(TypeError):  
         calculate_area_square(-2)
 
-def studentnumber():
+def test_calculate_area_square_studentnumber():
     assert calculate_area_square(2) == 4 
 
   
