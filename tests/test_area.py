@@ -6,8 +6,8 @@ def test_calculate_area_square_negative():
         calculate_area_square(-2)
 
 def studentnumber():
-    result =  "0"+"calculate_area_square(2)"
-    assert result == "04"
+      # my student number is: 100953904
+     assert calculate_area_square(2) == 4 
 
   
 def test_calculate_area_square_string():  
