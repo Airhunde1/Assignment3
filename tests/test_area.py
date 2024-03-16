@@ -8,6 +8,11 @@ def test_calculate_area_square_negative():
 def test_calculate_area_square_studentnumber():
     assert calculate_area_square(2) == int(str("04")) 
 
+def test_calculate_area_square():  
+    assert calculate_area_square(2) == 4  
+    assert calculate_area_square(2.5) == 6.25
+    assert calculate_area_square(3) == 10
+
   
 def test_calculate_area_square_string():  
     with pytest.raises(TypeError):  
