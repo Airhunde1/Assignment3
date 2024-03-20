@@ -24,4 +24,4 @@ jobs:
     - name: Run Snyk security scan
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_AUTH_TOKEN }} # Use GitHub Secrets to securely store the Snyk token
-      run: npx snyk test --all-projects
+      run: npx snyk test --all-projects #check
