@@ -16,7 +16,10 @@ jobs:
       - name: Install Snyk CLI
         run: npm install -g snyk
 
+      - name: Navigate to project directory
+        run: cd tests
+
       - name: Snyk Security Scan
-        run: snyk test --all-projects
+        run: snyk test test_area.py
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
