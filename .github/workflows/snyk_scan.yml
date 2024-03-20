@@ -13,8 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run Snyk security scan
+      - name: Snyk Security Scan
+        uses: snyk/actions/cli@v1
+        with:
+          args: test --all-projects
         env:
-          SNYK_TOKEN: ${{ secrets.SNYK_AUTH_TOKEN }} # Use GitHub Secrets to securely store the Snyk token
-        run: |
-          npx snyk@1.1285.0 test --all-projects # Specify the version of the snyk package
+          SNYK_TOKEN: ${{ secrets.SNYK_AUTH_TOKEN }}
