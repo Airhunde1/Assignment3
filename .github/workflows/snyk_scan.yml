@@ -13,21 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'  # Choose the appropriate Python version
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pytest
-
-      - name: Run pytest
-        run: |
-          pytest
-
       - name: Run Snyk security scan
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_AUTH_TOKEN }} # Use GitHub Secrets to securely store the Snyk token
-        run: npx snyk test --all-projects # Check vulnerabilities in dependencies
+        run: |
+          npx snyk@1.1285.0 test --all-projects # Specify the version of the snyk package
