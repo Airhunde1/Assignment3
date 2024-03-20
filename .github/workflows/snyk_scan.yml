@@ -13,9 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Install Snyk CLI
+        run: npm install -g snyk
+
       - name: Snyk Security Scan
-        uses: snyk/actions/cli@master
-        with:
-          args: test --all-projects
+        run: snyk test --all-projects
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_AUTH_TOKEN }}
